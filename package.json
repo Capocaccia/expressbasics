@@ -1,0 +1,22 @@
+{
+  "name": "expressbasics",
+  "version": "1.0.0",
+  "description": "learning Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Capocaccia/expressbasics.git"
+  },
+  "author": "Carter Capocaccia <carter.capocaccia@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Capocaccia/expressbasics/issues"
+  },
+  "homepage": "https://github.com/Capocaccia/expressbasics",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
