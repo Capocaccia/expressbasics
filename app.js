@@ -52,6 +52,12 @@ app.get('/test', function (req, res) {
   res.end('Test2!');
 });
 
+app.get('/pizza/:topping/:qty', function (req, res) {
+  var obj = req.params;
+  obj.title = 'Pizza Shop';
+  res.render('templates/pizza', obj);
+});
+
 app.get('/json', function (req, res) {
   res.send({an: 'object'});
 });
