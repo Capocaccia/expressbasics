@@ -3,8 +3,13 @@ var app = express();
 // var app = require express execute
 var routes = require('./routes/index');
 var pizza = require('./routes/pizza');
+var less = require('less-middleware')
 
 app.set('view engine', 'ejs');
+app.set('case sensitive routing', true);
+app.set('strict routing', true);
+
+app.locals.title = "My Awesome App" ;
 
 app.use(function(req, res, next){
   console.log('Request at ' + new Date().toISOString());
@@ -19,6 +24,7 @@ app.use(express.static('public'))
 app.use('/', routes);
 app.use('/pizza', pizza);
 
+app.use(less('public'));
 
 app.use(function(req, res, next){
   res.status(403).send('Unauthorized!');
