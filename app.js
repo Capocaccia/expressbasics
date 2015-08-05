@@ -5,6 +5,7 @@ var routes = require('./routes/index');
 var pizza = require('./routes/pizza');
 var cnug = require('./routes/cnug');
 var less = require('less-middleware');
+var imgur = require('./routes/imgur');
 var morgan = require('morgan');
 var bp = require('body-parser');
 var fs = require('fs');
@@ -51,6 +52,7 @@ app.use(bp.urlencoded({extended: false}))
 app.use('/', routes);
 app.use('/pizza', pizza);
 app.use('/cnug', cnug);
+app.use('/imgur', imgur);
 
 app.use(less('public'));
 
