@@ -11,6 +11,7 @@ var bp = require('body-parser');
 var fs = require('fs');
 var loggly = require('loggly');
 require('./lib/secrets');
+require('./lib/mongodb');
 
 app.set('view engine', 'ejs');
 app.set('case sensitive routing', true);

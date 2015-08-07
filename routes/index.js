@@ -9,21 +9,18 @@ router.get('/hello', function (req, res) {
   res.send('Hello!');
 });
 
-router.get('/world', function (req, res) {
-    setTimeout(function(){
-        var awesomeThings = [
-      'Pizza',
-      'Bacon',
-      '2nd Amendment',
-      'Pluto',
-      'Space Jam'
-    ];
-      res.render('templates/world', {title: 'My Test Title', welcome: "Welcome plebian!", awesomeThings: awesomeThings});
-    //res.render looks in the views folder by default
-    //the second argument in the render function allows you to pass arguments into the HTML
-    console.log('I waited!')
-  }, 5000)
-});
+router.get('/awesome', function (req, res) {
+    var collection = global.db.collection('awesomeThings');
+
+    collection.find().toArray(function(err, thing) {
+      res.render('templates/world',
+        {
+          welcome: 'Thanks for coming!',
+          awesomeThings: thing
+        }
+      );
+    });
+  });
 
 router.get('/error', function (req, res) {
   res.send(badVariable);

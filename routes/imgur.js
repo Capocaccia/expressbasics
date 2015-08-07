@@ -1,7 +1,9 @@
 var fs = require('fs');
 var imgur = require('imgur');
 var multer = require('multer');
+//Multer is a node.js middleware for handling multipart/form-data, which is primarily used for uploading files.
 var router = require('express').Router();
+//router allows you to inject middleware into the requests so it allows you to check for example valid api keys before you send a response back
 
 var upload = multer({
   dest: 'uploads/',
