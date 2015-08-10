@@ -10,7 +10,9 @@ var morgan = require('morgan');
 var bp = require('body-parser');
 var fs = require('fs');
 var loggly = require('loggly');
-require('./lib/secrets');
+if(process.env.NODE_ENV !== 'production'){
+  require('./lib/secrets');
+}
 require('./lib/mongodb');
 
 app.set('view engine', 'ejs');
